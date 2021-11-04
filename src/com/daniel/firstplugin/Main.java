@@ -54,8 +54,8 @@ public class Main extends JavaPlugin {
 	
 	public void healPlayer(Player playerToBeHealed) {
 	  playerToBeHealed.sendMessage(
-        ChatColor.GRAY + "Hello, " + ChatColor.GREEN + playerToBeHealed.getName() + 
-        ChatColor.GRAY + ". Your health has been restored"
+			  ChatColor.GRAY + "Hello, " + ChatColor.GREEN + playerToBeHealed.getName() + 
+			  ChatColor.GRAY + ". Your health has been restored"
 	   );
 	
 	  playerToBeHealed.setHealth(20.0);
