@@ -2,8 +2,11 @@ version: 1.0
 name: FirstPlugin
 main: com.daniel.firstplugin.Main
 author: Daniel
-description: First Plugin (can recover health with /recover command!)
+description: First Plugin
 commands: 
   recover:
     aliases: [restore_health, health]
     description: Recover HP!
+  reverse_name:
+    aliases: [name_reversed, reverse_my_name]
+    description: Print your IGN reversed!

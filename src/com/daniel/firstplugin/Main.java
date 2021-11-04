@@ -22,12 +22,20 @@ public class Main extends JavaPlugin {
 	
 	//	onCommand is a method that runs when any player runs ANY command (even if it doesn't exist.) EX: /hello
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
-		if (cmd.getName().equals("recover")) { // <-- a "/" isn't needed
-			Player player = verifyPlayer(sender);
-			if (player != null) {
-				healPlayer(player);
-			}
+		Player player = verifyPlayer(sender);
+		if (player == null) return false;
+		
+		String commandName = cmd.getName();
+		
+		switch(commandName) {
+		  case "recover": 
+			healPlayer(player);
+			
+		  case "reverse_name":
+			  printPlayerNameReversed(player);
+		  
+		  default: 
+			break;
 		}
 
 		return false;
@@ -51,5 +59,10 @@ public class Main extends JavaPlugin {
 		);
 	
 		playerToBeHealed.setHealth(20.0);
+	}
+	
+	public void printPlayerNameReversed(Player player) {
+		String reversedPlayerName = new StringBuilder(player.getName()).reverse().toString();
+		player.sendMessage(reversedPlayerName);
 	}
 }
