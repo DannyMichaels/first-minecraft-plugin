@@ -20,7 +20,7 @@ public class Main extends JavaPlugin {
 	  System.out.println("PLUGIN DISABLED!");
 	}
 	
-	//	onCommand is a method that runs when any player runs ANY command (even if it doesn't exist.) EX: /hello
+	//  onCommand is a method that runs when any player runs ANY command (even if it doesn't exist.) EX: /hello
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 	  String commandName = cmd.getName();
 	  Player player = verifyPlayer(sender);
