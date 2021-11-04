@@ -2,4 +2,8 @@ version: 1.0
 name: FirstPlugin
 main: com.daniel.firstplugin.Main
 author: Daniel
-description: First Plugin
+description: First Plugin (can recover health with /recover command!)
+commands: 
+  recover:
+    aliases: [restore_health, health]
+    description: Recover HP!
