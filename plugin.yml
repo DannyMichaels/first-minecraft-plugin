@@ -1,0 +1,5 @@
+version: 1.0
+name: FirstPlugin
+main: com.daniel.firstplugin.Main
+author: Daniel
+description: First Plugin
