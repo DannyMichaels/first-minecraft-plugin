@@ -22,23 +22,23 @@ public class Main extends JavaPlugin {
 	
 	//	onCommand is a method that runs when any player runs ANY command (even if it doesn't exist.) EX: /hello
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		Player player = verifyPlayer(sender);
-		if (player == null) return false;
-		
-		String commandName = cmd.getName();
-		
-		switch(commandName) {
-		  case "recover": 
-			healPlayer(player);
-			
-		  case "reverse_name":
-			  printPlayerNameReversed(player);
-		  
-		  default: 
-			break;
-		}
+	  String commandName = cmd.getName();
+	  Player player = verifyPlayer(sender);
 
-		return false;
+	  if (player == null) return false;
+			  
+	  switch(commandName) {
+	    case "recover": 
+		  healPlayer(player);
+			
+	    case "reverse_name":
+		    printPlayerNameReversed(player);
+		  
+		 default: 
+			break;
+	  }
+	  
+	  return false;
 	}
 	
 
@@ -53,16 +53,16 @@ public class Main extends JavaPlugin {
 	}
 	
 	public void healPlayer(Player playerToBeHealed) {
-		playerToBeHealed.sendMessage(
-		  ChatColor.GRAY + "Hello, " + ChatColor.GREEN + playerToBeHealed.getName() + 
-		  ChatColor.GRAY + ". Your health has been restored"
-		);
+	  playerToBeHealed.sendMessage(
+	    ChatColor.GRAY + "Hello, " + ChatColor.GREEN + playerToBeHealed.getName() + 
+		ChatColor.GRAY + ". Your health has been restored"
+	   );
 	
-		playerToBeHealed.setHealth(20.0);
+	  playerToBeHealed.setHealth(20.0);
 	}
 	
 	public void printPlayerNameReversed(Player player) {
-		String reversedPlayerName = new StringBuilder(player.getName()).reverse().toString();
-		player.sendMessage(reversedPlayerName);
+	  String reversedPlayerName = new StringBuilder(player.getName()).reverse().toString();
+	  player.sendMessage(reversedPlayerName);
 	}
 }
